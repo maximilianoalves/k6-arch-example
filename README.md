@@ -1,0 +1,1 @@
+# Projeto para exemplo de arquitetura para testes de performance utilizando o k6

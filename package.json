@@ -1,0 +1,19 @@
+{
+  "name": "k6-arch-example",
+  "version": "0.0.1",
+  "description": "Projeto para exemplo de arquitetura para testes de performance usando o k6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximilianoalves/k6-arch-example.git"
+  },
+  "author": "Maximiliano Alves da Cruz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximilianoalves/k6-arch-example/issues"
+  },
+  "homepage": "https://github.com/maximilianoalves/k6-arch-example#readme"
+}
