@@ -4,9 +4,7 @@
   "description": "Projeto para exemplo de arquitetura para testes de performance usando o k6",
   "main": "index.js",
   "scripts": {
-    "bundle": "webpack",
-    "test": "k6 run -e env=PRD src/simulations/fullFlow.test.js",
-    "test-vus": "k6 run -e env=PRD --vus 10 --duration 30s src/simulations/fullFlow.test.js"
+    "fullFlow": "k6 run -e env=PRD src/simulations/fullFlow.test.js"
   },
   "repository": {
     "type": "git",
