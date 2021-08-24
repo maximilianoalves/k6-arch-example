@@ -4,7 +4,12 @@
   "description": "Projeto para exemplo de arquitetura para testes de performance usando o k6",
   "main": "index.js",
   "scripts": {
-    "fullFlow": "k6 run -e env=PRD src/simulations/fullFlow.test.js"
+    "FullFlowLoadTest": "k6 run -e env=PRD src/simulations/FullFlowLoad.test.js",
+    "FullFlowStressTest": "k6 run -e env=PRD src/simulations/FullFlowStress.test.js",
+    "docker:FullFlowLoadTest": "docker-compose run k6 run -e env=PRD /src/simulations/FullFlowLoad.test.js",
+    "docker:FullFlowStressTest": "docker-compose run k6 run -e env=PRD /src/simulations/FullFlowStress.test.js",
+    "docker:up": "docker-compose up -d influxdb grafana",
+    "docker:down": "docker-compose down -v"
   },
   "repository": {
     "type": "git",
