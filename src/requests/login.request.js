@@ -9,6 +9,7 @@ export default class Login {
       headers: {
         'accept': 'application/json',
         'Content-Type': 'application/json',
+        'monitor': false,
       },
     };
   }

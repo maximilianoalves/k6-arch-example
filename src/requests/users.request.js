@@ -8,6 +8,7 @@ export default class Users {
     this.params = {
       headers: {
         'Content-Type': 'application/json',
+        'monitor': false,
       },
     };
   }
