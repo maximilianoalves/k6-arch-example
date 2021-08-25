@@ -9,6 +9,7 @@ export default class Products {
       headers: {
         'accept': 'application/json',
         'Content-Type': 'application/json',
+        'monitor': false,
       },
     };
   }
