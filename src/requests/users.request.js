@@ -16,7 +16,7 @@ export default class Users {
   list() {
     let response = http.get(`${Utils.getBaseUrl()}/usuarios`, this.params)
     check(response, {
-      'is status 200': (r) => r.status === 200,
+      'is status 200': () => response.status == 200,
     });
   }
 }

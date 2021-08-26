@@ -12,6 +12,7 @@ export default class Login {
         'monitor': false,
       },
     };
+    this.token = "";
   }
 
   access() {
@@ -20,9 +21,13 @@ export default class Login {
       password: 'teste'
     })
     let response = http.post(`${Utils.getBaseUrl()}/login`, payload, this.params)
+    this.token = response.json('authorization')
     check(response, {
-      'is status 200': (r) => r.status === 200,
+      'is status 200': () => response.status === 200,
     });
   }
 
+  getToken() {
+    return this.token;
+  }
 }

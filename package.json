@@ -1,13 +1,14 @@
 {
   "name": "k6-arch-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Projeto para exemplo de arquitetura para testes de performance usando o k6",
   "main": "index.js",
   "scripts": {
-    "FullFlowLoadTest": "k6 run -e env=PRD src/simulations/FullFlowLoad.test.js",
-    "FullFlowStressTest": "k6 run -e env=PRD src/simulations/FullFlowStress.test.js",
-    "docker:FullFlowLoadTest": "docker-compose run k6 run -e env=PRD /src/simulations/FullFlowLoad.test.js",
-    "docker:FullFlowStressTest": "docker-compose run k6 run -e env=PRD /src/simulations/FullFlowStress.test.js",
+    "pretest": "",
+    "FullFlowLoadTest": "webpack && k6 run dist/FullFlowLoad.test.js",
+    "FullFlowStressTest": "webpack && k6 run  dist/FullFlowStress.test.js",
+    "docker:FullFlowLoadTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/FullFlowLoad.test.js",
+    "docker:FullFlowStressTest": "docker-compose up -d influxdb grafana && webpack && docker-compose run k6 run /dist/FullFlowStress.test.js",
     "docker:up": "docker-compose up -d influxdb grafana",
     "docker:down": "docker-compose down -v"
   },
@@ -22,5 +23,16 @@
   },
   "homepage": "https://github.com/maximilianoalves/k6-arch-example#readme",
   "devDependencies": {
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "casual": "^1.6.2",
+    "core-js": "^3.16.3",
+    "faker": "^5.5.3",
+    "k6": "^0.0.0",
+    "webpack": "^5.51.1"
   }
 }

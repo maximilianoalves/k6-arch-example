@@ -1,15 +1,11 @@
 export default class Utils {
 
   static getBaseUrl() {
-    let env = __ENV.env;
-
-    switch (env) {
-      case "PRD":
-        return 'https://serverest.dev/';
-        break;
+    switch (process.env.NODE_ENV) {
+      case 'production':
+        return 'https://serverest.dev'
       default:
-        console.error("Url base not defined.");
-        break;
+        console.error('Url or env not defined')
     }
   }
 }

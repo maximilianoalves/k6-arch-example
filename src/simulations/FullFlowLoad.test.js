@@ -19,14 +19,20 @@ export default function () {
   let user = new Users();
   let login = new Login();
   let products = new Products();
-
   group('List valid users', () => {
     user.list();
   });
   group('Access with admin user', () => {
     login.access();
-  });
+  })
   group('List products', () => {
     products.list();
+  });
+  group('Add product', () => {
+    products.add(login.getToken());
+  });
+  group('Delete product', () => {
+    products.delete(login.getToken())
   })
+
 }
