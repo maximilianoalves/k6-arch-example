@@ -1,11 +1,8 @@
-<h1 align="center"> Sample project for performance tests using k6</h1>
+<h1 align="center"> Projeto para exemplo de arquitetura para testes de performance utilizando o k6</h1>
 
-### [**Você pode acessar a documentação em português aqui**](docs/pt-BR/README.md) 
-<h1 align="center"></h1>
-  
-Skeleton for project start for performance test using k6 and other tools, this project also has compilation with webpack for use fakerjs library for generate random data and has grafana with influxdb to follow tests in real time and docker for run all this things.
+Projeto para criação de arquitetura e esqueleto de testes de performance utilizando o k6.
 
-## Technologies and tools used:  
+## Tecnologias utilizadas:  
 - [JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) 
 - [npm](https://www.npmjs.com/)
 - [k6](https://k6.io/)
@@ -13,7 +10,7 @@ Skeleton for project start for performance test using k6 and other tools, this p
 - [Grafana](https://grafana.com/)
 - [Influxdb](https://github.com/influxdata/influxdb)
 
-## File Structure
+## Estrutura de arquivos
 📦k6-arch-example  
 ┣ 📂dashboards  
 ┃ ┗ 📜k6-load-testing-results.json  
@@ -37,22 +34,31 @@ Skeleton for project start for performance test using k6 and other tools, this p
 ┣ 📜package-lock.json  
 ┗ 📜package.json  
 
-## Execution Examples  
-### Requirements: 
-- Instalation [**k6**](https://k6.io/docs/getting-started/installation/)
-- Instalation [**docker/docker-compose**](https://www.docker.com/get-started)
+## Exemplos de execução 
+### Pré-requisitos: 
+- Instalação [**k6**](https://k6.io/docs/getting-started/installation/)
+- Instalação [**docker/docker-compose**](https://www.docker.com/get-started)
 
-### Without docker, influxdb and grafana:
-- With npm:
+### Sem docker, influxdb e grafana:
+- Com npm:
   - ```npm run FullFlowLoadTest```    
-- Without npm:
+- Sem npm:
   - ```k6 run -e env=PRD src/simulations/FullFlowLoad.test.js```
 
-* Using docker you can follow grafana in real time accessing the url of [Grafana's Dashboard](http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
+### Com docker, influxdb e grafana:  
+- Com npm: 
+  - ```npm docker:up```  
+  ```npm run docker:FullFlowLoadTest```  
+  ```npm run docker:down```  
+- Sem npm:
+  - ```docker-compose up -d influxdb grafana && docker-compose run k6 run -e env=PRD /src/simulations/FullFlowLoad.test.js```
 
-![Grafana's dashboard with many graphs for performance monitoring](docs/img/img.png)
+* Utilizando docker você pode acompanhar o grafana em tempo real acessando a url do [Dashboard do Grafana](http://localhost:3000/d/k6/k6-load-testing-results?orgId=1&refresh=5s)
 
-### Doubts!? contact me: 
+![Dashboard do grafana contendo diversos graficos de monitoramento de performance](../img/img.png)
+
+
+### Dúvidas!? entre em contato: 
 
 [![Twitter](https://badgen.net/badge/Twitter/%40max_dacruz?icon=twitter)](https://twitter.com/max_dacruz)
 [![Medium](https://badgen.net/badge/Medium/%40maximilianoalves?icon=medium)](https://medium.com/@maximilianoalves)
