@@ -39,8 +39,8 @@ Skeleton for project start for performance test using k6 and other tools, this p
 
 ## Execution Examples  
 ### Requirements: 
-- Instalation [**k6**](https://k6.io/docs/getting-started/installation/)
-- Instalation [**docker/docker-compose**](https://www.docker.com/get-started)
+- Installation [**k6**](https://k6.io/docs/getting-started/installation/)
+- Installation [**docker/docker-compose**](https://www.docker.com/get-started)
 
 ### Without docker, influxdb and grafana:
 - With npm:
